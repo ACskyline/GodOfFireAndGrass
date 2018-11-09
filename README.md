@@ -1,4 +1,4 @@
-Vulkan Grass Rendering
+Vulkan Grass Renderer
 ========================
 
 * Tested on: Windows 10, i7-7700K @ 4.20GHz 16.0GB, GTX 1080 15.96GB
