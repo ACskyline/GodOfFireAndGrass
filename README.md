@@ -25,6 +25,17 @@ Analysis
 
 ---
 
+## I. Grass Generation
+
+### overview
+
+![](img/blade_model.jpg)
+
+### detail
+
+Every grass blade is generated based on 3 vertices, v0, v1 and v2. v0 is the root location. v2 is the tip of the grass. The 3 vertices are the control points of a 2nd degree Bezier curve. To generate the shape of the grass blade, tessellation shaders are used. For every 3 control points, a quad patch is generated with fixed inner and outter tessellation level. Based on the unique tessellation uv coordinates, the generated vertice are warpped along the Bezier curve represented by v0, v1 and v2 both vertically and horizontally. To apply physics, the position of v2 is transformed based on the gravity effect downwards and its effect in the front direction. To ensure v1 is always appropriate, its location is calculated based on the position of v2 and the projection of v2 - v0 on to the grass plane. To ensure the length of the grass blade stays the same and the blade always stay above ground, two validation methods are used. You can find them at chapter 5.2 in the paper [Responsive Real-Time Grass Rendering for General 3D Scenes
+](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf).
+
 ## I. Orientation Culling
 
 ### overview
