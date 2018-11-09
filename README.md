@@ -36,7 +36,7 @@ Analysis
 Every grass blade is generated based on 3 vertices, v0, v1 and v2. v0 is the root location. v2 is the tip of the grass. The 3 vertices are the control points of a 2nd degree Bezier curve. To generate the shape of the grass blade, tessellation shaders are used. For every 3 control points, a quad patch is generated with fixed inner and outter tessellation level. Based on the unique tessellation uv coordinates, the generated vertice are warpped along the Bezier curve represented by v0, v1 and v2 both vertically and horizontally. To apply physics, the position of v2 is transformed based on the gravity effect downwards and its effect in the front direction. To ensure v1 is always appropriate, its location is calculated based on the position of v2 and the projection of v2 - v0 on to the grass plane. To ensure the length of the grass blade stays the same and the blade always stay above ground, two validation methods are used. You can find them at chapter 5.2 in the paper [Responsive Real-Time Grass Rendering for General 3D Scenes
 ](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf).
 
-## I. Orientation Culling
+## II. Orientation Culling
 
 ### overview
 
@@ -48,7 +48,7 @@ When looking from left or right side of the grass blade, the blade will take les
 
 ---
 
-## II. Frustum Culling
+## III. Frustum Culling
 
 ### overview
 
@@ -60,7 +60,7 @@ When looking from very close distance, the grass blades outside the camera frust
 
 ---
 
-## III. Distance Culling
+## IV. Distance Culling
 
 ### overview
 
@@ -73,7 +73,7 @@ When looking from very far distance, the density of the grass doesn't need to be
 
 ---
 
-## 1. 8192 (2^13) grass blades
+## Showcase One 8192 (2^13) grass blades
 
 ### overview
 
@@ -95,7 +95,7 @@ This is the bench mark configuration. From the chart, we can see that orientatio
 
 ---
 
-## 2. 131072 (2^17) grass blades
+## Showcase Two 131072 (2^17) grass blades
 
 ### overview
 
@@ -117,7 +117,7 @@ When there are more grass blades, the rendering time is slower. But the pattern 
 
 ---
 
-## 3. 2097152 (2^21) grass blades
+## Showcase Three 2097152 (2^21) grass blades
 
 ### overview
 
